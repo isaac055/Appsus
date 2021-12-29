@@ -13,7 +13,7 @@ export function App() {
   return (
     <Router>
       <section className='app'>
-        <AppHeader />
+        {/* <AppHeader /> */}
         <main>
           <Switch>
             {/* <Route component={Nots} path='/Nots' /> */}

@@ -15,11 +15,11 @@ export class Home extends React.Component {
                     <h1>Appsus</h1>
                     <nav>
                         <button className="nav-btn" onClick={this.onNav}>
-                            <i class="fas fa-th"></i>
+                            <i className="fas fa-th"></i>
                         </button>
                         <div className="nav-modal flex" >
-                            <NavLink className="keep-btn clean-link" to="/Nots"><i class="fas fa-sticky-note"></i></NavLink>
-                            <NavLink className="mail-btn clean-link" to="/Mail"><i class="fas fa-paper-plane"></i></NavLink>
+                            {/* <NavLink className="keep-btn clean-link" to="/Nots"><i class="fas fa-sticky-note"></i></NavLink>
+                            <NavLink className="mail-btn clean-link" to="/Mail"><i class="fas fa-paper-plane"></i></NavLink> */}
                         </div>
                     </nav>
                 </header>
