@@ -1,6 +1,6 @@
-import { Details } from '../apps/keep/pages/note-details';
-import { Index } from '../apps/keep/pages/note-index';
-import {Notes} from '../apps/keep/services/note.service'
+// import { Details } from '../apps/keep/pages/note-details';
+// import { Index } from '../apps/keep/pages/note-index';
+// import {Notes} from '../apps/keep/services/note.service'
 
 
 // state = {
