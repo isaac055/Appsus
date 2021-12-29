@@ -1,11 +1,16 @@
 // import {Details} from  '../apps/keep/pages/note-details'
-import { emailService } from '../services/email.service'
-import { emailList } from '../cmps/email-list.jsx'
-
+import { emailService } from '../services/email.service.js'
+import { emailsList } from '../cmps/email-list.jsx'
+console.log(emailsList);
 export class MailApp extends React.Component {
     state = {
         emails: null,
         filterBy: null,
+    }
+    componentDidMount() {
+        const urlSearchParams = new URLSearchParams(this.props.location.search)
+        console.log(urlSearchParams);
+        this.loadEmails()
     }
 
     // get ctgSearchParam() {
@@ -16,7 +21,6 @@ export class MailApp extends React.Component {
 
     get emailsToDisplay() {
         const { emails } = this.state
-
         return emails
     }
 
@@ -33,12 +37,13 @@ export class MailApp extends React.Component {
 
     render() {
         const { emails } = this.state
-        console.log(this.state);
+        console.log(emails);
 
         return (
             <section className="email-app">
+                <div>Hello</div>
                 <div className="mails">
-                    <emailList emails={this.emailsToDisplay} />
+                    <emailsList emails={this.emailsToDisplay} />
                 </div>
             </section>
         )

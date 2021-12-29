@@ -1,5 +1,5 @@
 // import { Loader } from './email-loader.jsx'
-import { emailPreview } from './email-preview.jsx'
+import {emailPreview} from './email-preview.jsx'
 
 export function emailsList({ emails }) {
     // no emails for show
