@@ -2,14 +2,14 @@ export class Home extends React.Component {
   state = {};
   render() {
     return (
-      <section className = 'homePage flex align justify'>
-        <header>
+      <section className = 'homePage flex align center column'>
+        <header className = 'flex align space-between '>
           <h1>Appsus</h1>
           <nav>
             <i className ='fab fa-buromobelexperte'></i>
           </nav>
         </header>
-        <main>
+        <main className = 'flex align center column'>
           <h1>Welcome</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde

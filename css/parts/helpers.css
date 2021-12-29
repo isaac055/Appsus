@@ -4,7 +4,13 @@
 .flex.align{
     align-content: center;
 }
-.flex.justify{
+.flex.center{
     justify-content: center;
 }
-.flex.
+.flex.space-between{
+    justify-content: space-between;
+}
+.flex.column{
+    flex-direction: column;
+    text-align: center;
+}
