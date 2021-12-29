@@ -16,10 +16,10 @@ class _AppHeader extends React.Component {
                 <h1 onClick={() => this.props.history.push('/')}>Appsus</h1>
                 <nav className="main-nav">
                     <ul>
-                        <il><NavLink activeClassName="my-active" exact to="/">Home</NavLink> </il>
-                        <il><NavLink to="/about">About</NavLink> </il>
-                        <il><NavLink to="/Nots">Keep</NavLink></il>
-                        <il><NavLink to="/Mail">Mail</NavLink> </il>
+                        <li className='my-active'><NavLink activeClassName="my-active" exact to="/">Home</NavLink> </li>
+                        <li className='about'><NavLink to="/About">About</NavLink> </li>
+                        <li className='Nots'><NavLink to="/Nots">Keep</NavLink></li>
+                        <li className='Mail'><NavLink to="/Mail">Mail</NavLink> </li>
                     </ul>
                 </nav>
             </header>
