@@ -1,10 +1,11 @@
 // import {Details} from  '../apps/keep/pages/note-details'
 import { emailService } from '../services/email.service.js'
-import { emailsList } from '../cmps/email-list.jsx'
-console.log(emailsList);
+import { EmailsList } from '../cmps/email-list.jsx'
+console.log(EmailsList);
+
 export class MailApp extends React.Component {
     state = {
-        emails: null,
+        emails: [],
         filterBy: null,
     }
     componentDidMount() {
@@ -26,7 +27,7 @@ export class MailApp extends React.Component {
 
     loadEmails = () => {
         const { filterBy } = this.state
-        emailService.query(filterBy).then(emails => {
+        emailService.query().then(emails => {
             this.setState({ emails })
         })
     }
@@ -37,13 +38,13 @@ export class MailApp extends React.Component {
 
     render() {
         const { emails } = this.state
-        console.log(emails);
+        // console.log(emails);
 
         return (
             <section className="email-app">
                 <div>Hello</div>
                 <div className="mails">
-                    <emailsList emails={this.emailsToDisplay} />
+                    <EmailsList emails={emails} />
                 </div>
             </section>
         )
