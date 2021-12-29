@@ -1,6 +1,7 @@
-import {Home} from './pages/app-home.jsx'
-import {About} from './pages/app-about.jsx'
-import {Nots} from './pages/app-nots.jsx'
+import { Home } from './pages/app-home.jsx'
+import { About } from './pages/app-about.jsx'
+import { Nots } from './pages/app-nots.jsx'
+import { Mail } from './pages/app-mail.jsx'
 
 const Router = ReactRouterDOM.HashRouter;
 const { Route, Switch } = ReactRouterDOM;
@@ -12,8 +13,8 @@ export function App() {
         {/* <AppHeader /> */}
         <main>
           <Switch>
-            {/* <Route component={} path='' /> */}
             <Route component={Nots} path='/Nots' />
+            <Route component={Mail} path='/Mail' />
             <Route component={About} path='/About' />
             <Route component={Home} path='/' />
           </Switch>
