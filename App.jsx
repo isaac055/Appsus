@@ -1,6 +1,6 @@
 import { Home } from './js/pages/app-home.jsx'
 import { About } from './js/pages/app-about.jsx'
-import { Nots } from './js/apps/keep/pages/note-app.jsx'
+import { Notes } from './js/apps/keep/pages/note-app.jsx'
 import { Email } from './js/apps/email/pages/email-index.jsx'
 import { AppHeader } from './js/cmps/app-header.jsx'
 
@@ -15,7 +15,7 @@ export function App() {
         <AppHeader />
         <main>
           <Switch>
-            <Route component={Nots} path='/Nots' />
+            <Route component={Notes} path='/Nots' />
             <Route component={Email} path='/Mail' />
             <Route component={About} path='/About' />
             <Route component={Home} path='/' />
