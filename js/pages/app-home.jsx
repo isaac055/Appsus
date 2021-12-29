@@ -6,7 +6,7 @@ export class Home extends React.Component {
         <header className = 'header flex align space-between '>
           <h1>Appsus</h1>
           <nav>
-          <i class="fas fa-th"></i>
+          <i className="fas fa-th"></i>
           </nav>
         </header>
         <main className = 'flex align center column'>
