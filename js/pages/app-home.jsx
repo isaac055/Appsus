@@ -7,7 +7,7 @@ export class Home extends React.Component{
             <section>
                 <header>
                     <h1></h1>
-                    <nav></nav>
+                    <nav><i class="fab fa-buromobelexperte"></i></nav>
                 </header>
             </section>
         )
