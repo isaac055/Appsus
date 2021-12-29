@@ -3,9 +3,9 @@ import { Index } from '../apps/keep/pages/note-index';
 import {Notes} from '../apps/keep/services/note.service'
 
 
-state = {
-    notes : Notes
-}
+// state = {
+//     notes : Notes
+// }
 
 // componentDidMount() {
 //     this.loadNots();
