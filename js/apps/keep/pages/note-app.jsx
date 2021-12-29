@@ -1,5 +1,6 @@
-import { Preview } from '../cmps/note-preview.jsx';
 import { noteService } from '../services/note.service.js';
+// import { NoteFilter } from '../cmps/note-filter.jsx';
+import { NoteList } from '../cmps/note-list.jsx';
 
 export class Notes extends React.Component {
   state = {
@@ -18,7 +19,17 @@ export class Notes extends React.Component {
     });
   };
 
-  onSetFilter = (filterBy)=> {
-      this.setState({filterBy},this.loadNotes)
+  onSetFilter = (filterBy) => {
+    this.setState({ filterBy }, this.loadNotes);
+  };
+  render() {
+      const { notes } = this.state;
+      
+    return (
+      <section>
+        {/* <NoteFilter onSetFilter={this.onSetFilter} /> */}
+        <NoteList notes={notes} />
+      </section>
+    );
   }
 }
