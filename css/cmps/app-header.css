@@ -1,3 +1,11 @@
 .header{
     background-color: rgb(233, 155, 12);
 }
+ul{
+    list-style: none;
+    flex-direction:row;
+    margin-inline-end: 10vh;
+}
+ul li{
+    margin-inline-end: 10vh;
+}
