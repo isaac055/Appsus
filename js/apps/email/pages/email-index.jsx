@@ -1,20 +1,45 @@
 // import {Details} from  '../apps/keep/pages/note-details'
-// import {Index} from  '../apps/keep/pages/note-index'
+import { emailService } from '../services/email.service'
+import { emailList } from '../cmps/email-list.jsx'
+
+export class MailApp extends React.Component {
+    state = {
+        emails: null,
+        filterBy: null,
+    }
+
+    // get ctgSearchParam() {
+    //     const urlSearchParams = new URLSearchParams(this.props.location.search)
+    //     return urlSearchParams.get('ctg')
+    // }
 
 
-export class Mail extends React.Component {
+    get emailsToDisplay() {
+        const { emails } = this.state
+
+        return emails
+    }
+
+    loadEmails = () => {
+        const { filterBy } = this.state
+        emailService.query(filterBy).then(emails => {
+            this.setState({ emails })
+        })
+    }
+
+    onSetFilter = (filterBy) => {
+        this.setState({ filterBy }, this.loadEmails)
+    }
+
     render() {
-       
+        const { emails } = this.state
+        console.log(this.state);
+
         return (
-            <section className="mails">
-                
-                <form onSubmit={this.onSaveCar} >
-                    {/* <label htmlFor="by-vendor">Vendor:</label>
-                    <input ref={this.inputRef} placeholder="Enter vendor" name="vendor" type="text" id="by-vendor" value={vendor} onChange={this.handleChange} />
-                    <label htmlFor="by-speed">Speed:</label>
-                    <input placeholder="Enter speed" name="speed" type="number" id="by-speed" value={speed} onChange={this.handleChange} />
-                    <button className="primary-btn ">Save car</button> */}
-                </form>
+            <section className="email-app">
+                <div className="mails">
+                    <emailList emails={this.emailsToDisplay} />
+                </div>
             </section>
         )
     }
