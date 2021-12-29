@@ -1,1 +1,3 @@
-@import './parts/helpers.css'
+@import './parts/base.css';
+@import './parts/helpers.css';
+@import './cmps/app-home.css';

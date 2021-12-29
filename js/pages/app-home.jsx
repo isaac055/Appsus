@@ -3,7 +3,7 @@ export class Home extends React.Component {
   render() {
     return (
       <section className = 'homePage flex align center column'>
-        <header className = 'flex align space-between '>
+        <header className = 'header flex align space-between '>
           <h1>Appsus</h1>
           <nav>
             <i className ='fab fa-buromobelexperte'></i>
