@@ -1,7 +1,20 @@
-import {Details} from  '../apps/keep/pages/note-details'
-import {Index} from  '../apps/keep/pages/note-index'
+import { Details } from '../apps/keep/pages/note-details';
+import { Index } from '../apps/keep/pages/note-index';
+import {Notes} from '../apps/keep/services/note.service'
 
 
-export class Nots extends React.Component {
-    
+state = {
+    notes : Notes
 }
+
+// componentDidMount() {
+//     this.loadNots();
+// }
+
+// export class Nots extends React.Component {
+//   render() {
+//     return (
+
+//     )
+//   }
+// }
