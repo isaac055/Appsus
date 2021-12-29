@@ -1,9 +1,8 @@
-import { Home } from './pages/app-home.jsx'
-import { About } from './pages/app-about.jsx'
-import { Nots } from './pages/app-nots.jsx'
-import { Mail } from './pages/app-mail.jsx'
-
-import { AppHeader } from './cmps/AppHeader.jsx'
+import { Home } from './js/pages/app-home.jsx'
+import { About } from './js/pages/app-about.jsx'
+import { Nots } from './js/apps/keep/pages/note-app.jsx'
+import { Email } from './js/apps/email/pages/email-index.jsx'
+import { AppHeader } from './js/cmps/app-header.jsx'
 
 
 const Router = ReactRouterDOM.HashRouter;
@@ -17,7 +16,7 @@ export function App() {
         <main>
           <Switch>
             <Route component={Nots} path='/Nots' />
-            <Route component={Mail} path='/Mail' />
+            <Route component={Email} path='/Mail' />
             <Route component={About} path='/About' />
             <Route component={Home} path='/' />
           </Switch>
