@@ -1,6 +1,14 @@
-.mails{
-    background-color: #fff;
+.email-app {
+    display: grid;
 }
-img{
-    max-width: 20vh;
+
+.mails {
+    margin-left: 50vh;
+    background-color: chartreuse;
+}
+
+.side-bar {
+    position: fixed;
+    background-color: blue;
+    width: calc(50vh);
 }

@@ -6,7 +6,6 @@ export function EmailsList({ emails }) {
     if (!emails.length) return <h1>There are no emails to show</h1>
     return (
         <section className="email-list">
-            <h1>vj</h1>
             {emails.map(email => <EmailPreview key={email.id} email={email} />)}
         </section>
     )

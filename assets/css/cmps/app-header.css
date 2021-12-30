@@ -1,11 +1,21 @@
-.header{
+.header {
     background-color: rgb(233, 155, 12);
 }
-ul{
+
+ul {
     list-style: none;
-    flex-direction:row;
+    flex-direction: row;
     margin-inline-end: 10vh;
 }
-ul li{
+
+ul li {
     margin-inline-end: 10vh;
+}
+
+.logo {
+    margin-inline-start: 10vh;
+}
+
+ul li :active {
+    color: rgb(54, 201, 188);
 }

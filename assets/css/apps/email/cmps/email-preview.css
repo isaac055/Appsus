@@ -1,15 +1,14 @@
 .email-preview {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
     background-color: #fff;
     border-radius: 0.5rem;
-    padding: 1rem;
-    flex-direction: row;
+    align-items: center;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .email-preview img {
-    width: 10s0px;
+    width: 50px;
 }
