@@ -6,7 +6,7 @@ export function EmailPreview({ email }) {
 
         <Link className="clean-link" to={`/email/${email.id}`}>
             <div className="email-preview">
-                <img src={`https://robohash.org/${email.id}`} alt="" />
+                <img src="./assets/img/user-.png" alt="" />
                 <div className="email-content">
                     <h4>{email.subject}</h4>
                     <h5>{email.body}</h5>
