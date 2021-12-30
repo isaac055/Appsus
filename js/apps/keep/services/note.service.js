@@ -18,7 +18,7 @@ const gNotes = [
   {
     id: 'n102',
     type: 'note-img',
-    info: { url: 'http://some-img/me', title: 'Bobi and Me' },
+    info: { url: 'https://i.natgeofe.com/n/abf58ec8-ac78-4108-adbe-918fa5bda2e5/mountain-gorilla_2x3.jpg', title: 'Bobi and Me' },
     style: { backgroundColor: '#00d' },
     importint : false
   },
@@ -53,17 +53,17 @@ function _createNotes() {
   _saveNotesToStorage(notes);
 }
 
-function _getFilteredNotes(notes, filterBy) {
-  let { importint } = filterBy;
-  importint = importint ? true : false;
-  return notes.filter((note) => {
-    return (
-      book.title.includes(title) &&
-      book.listPrice.amount >= minPrice &&
-      book.listPrice.amount <= maxPrice
-    );
-  });
-}
+// function _getFilteredNotes(notes, filterBy) {
+//   let { importint } = filterBy;
+//   importint = importint ? true : false;
+//   return notes.filter((note) => {
+//     return (
+//       book.title.includes(title) &&
+//       book.listPrice.amount >= minPrice &&
+//       book.listPrice.amount <= maxPrice
+//     );
+//   });
+// }
 
 function _saveNotesToStorage(notes) {
   noteStorageService.saveToStorage(STORAGE_KEY, notes);
