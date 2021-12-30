@@ -4,4 +4,10 @@
 @import './cmps/app-header.css';
 
 
-@import './apps/email/email-index.css';
+/* EMAIL PAGES */
+@import './apps/email/pages/email-app.css';
+
+/* EMAIL CMPS  */
+@import './apps/email/cmps/email-list.css';
+@import './apps/email/cmps/email-preview.css';
+

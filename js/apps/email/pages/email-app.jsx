@@ -42,7 +42,7 @@ export class MailApp extends React.Component {
 
         return (
             <section className="email-app">
-                <div>Hello</div>
+                <div className="side-bar">Hello</div>
                 <div className="mails">
                     <EmailsList emails={emails} />
                 </div>
