@@ -26,7 +26,7 @@ export class Notes extends React.Component {
       const { notes } = this.state;
       
     return (
-      <section>
+      <section className="note-app" >
         {/* <NoteFilter onSetFilter={this.onSetFilter} /> */}
         <NoteList notes={notes} />
       </section>

@@ -11,3 +11,6 @@
 @import './apps/email/cmps/email-list.css';
 @import './apps/email/cmps/email-preview.css';
 
+/* keep css */
+@import './apps/keep/note-list.css';
+@import './apps/keep/note-preview.css'

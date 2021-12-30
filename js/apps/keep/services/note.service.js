@@ -34,6 +34,63 @@ const gNotes = [
     },
     importint : true
   },
+  {
+    id: 'n104',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n105',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n106',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n107',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n108',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n109',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n110',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+  {
+    id: 'n111',
+    type: 'note-txt',
+    isPinned: true,
+    info: { txt: 'Fullstack Me Baby!' },
+    importint : false
+  },
+
 ];
 
 _createNotes()
@@ -46,9 +103,9 @@ function query(filterBy = null) {
 }
 
 function _createNotes() {
-  let notes = _loadNotesFromStorage();
+  // let notes = _loadNotesFromStorage();
   if (!notes || !notes.length) {
-    notes = gNotes;
+    var notes = gNotes;
   }
   _saveNotesToStorage(notes);
 }

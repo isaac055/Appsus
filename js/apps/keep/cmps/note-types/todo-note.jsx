@@ -4,13 +4,13 @@ export class TodoNote extends React.Component {
 
   render() {
     return (
-      <div className='notes'> 
+      <div className='notes'>
         <h3>{this.props.note.info.label}</h3>
-        <ul>
+        {/* <ul> */}
           {this.props.note.info.todos.map((todo, idx) => {
             return <li key={idx}>{todo.txt}</li>;
           })}
-        </ul>
+        {/* </ul> */}
       </div>
     );
   }
