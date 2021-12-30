@@ -4,7 +4,7 @@ export class TextNote extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='notes' >
         <h3>{this.props.note.info.txt}</h3>
       </div>
     );
