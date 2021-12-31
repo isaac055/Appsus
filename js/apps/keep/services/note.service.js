@@ -1,29 +1,32 @@
-import {noteStorageService} from './note.storage.service.js'
+import { NoteStorageService } from './note.storage.service.js';
+import { NoteUtilService } from './note.util.service.js';
 
-export const noteService = {
-  query
-}
+export const NoteService = {
+  query,
+};
 
-
-const STORAGE_KEY = 'NoteDB'
+const STORAGE_KEY = 'NoteDB';
 
 const gNotes = [
   {
-    id: 'n101',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n102',
+    id: NoteUtilService.makeId(),
     type: 'note-img',
-    info: { url: 'https://i.natgeofe.com/n/abf58ec8-ac78-4108-adbe-918fa5bda2e5/mountain-gorilla_2x3.jpg', title: 'Bobi and Me' },
+    info: {
+      url: 'https://i.natgeofe.com/n/abf58ec8-ac78-4108-adbe-918fa5bda2e5/mountain-gorilla_2x3.jpg',
+      title: 'Bobi and Me',
+    },
     style: { backgroundColor: '#00d' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n103',
+    id: NoteUtilService.makeId(),
     type: 'note-todos',
     info: {
       label: 'Get my stuff together',
@@ -32,68 +35,67 @@ const gNotes = [
         { txt: 'Coding power', doneAt: 187111111 },
       ],
     },
-    importint : true
+    importint: true,
   },
   {
-    id: 'n104',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n105',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n106',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n107',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n108',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n109',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n110',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
   {
-    id: 'n111',
+    id: NoteUtilService.makeId(),
     type: 'note-txt',
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
-    importint : false
+    importint: false,
   },
-
 ];
 
-_createNotes()
+_createNotes();
 
 function query(filterBy = null) {
   const notes = _loadNotesFromStorage();
@@ -110,22 +112,14 @@ function _createNotes() {
   _saveNotesToStorage(notes);
 }
 
-// function _getFilteredNotes(notes, filterBy) {
-//   let { importint } = filterBy;
-//   importint = importint ? true : false;
-//   return notes.filter((note) => {
-//     return (
-//       book.title.includes(title) &&
-//       book.listPrice.amount >= minPrice &&
-//       book.listPrice.amount <= maxPrice
-//     );
-//   });
-// }
+function _getFilteredNotes(notes, filterBy) {
+  return notes.filter((note) => note.type === filterBy.type);
+}
 
 function _saveNotesToStorage(notes) {
-  noteStorageService.saveToStorage(STORAGE_KEY, notes);
+  NoteStorageService.saveToStorage(STORAGE_KEY, notes);
 }
 
 function _loadNotesFromStorage() {
-  return noteStorageService.loadFromStorage(STORAGE_KEY);
+  return NoteStorageService.loadFromStorage(STORAGE_KEY);
 }

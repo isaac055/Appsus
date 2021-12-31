@@ -1,4 +1,4 @@
-export const noteStorageService = {
+export const NoteStorageService = {
     loadFromStorage,
     saveToStorage
 }

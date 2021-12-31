@@ -1,33 +1,30 @@
-import { noteService } from '../services/note.service.js';
-// import { NoteFilter } from '../cmps/note-filter.jsx';
+import { NoteService } from '../services/note.service.js';
+import { NoteFilter } from '../cmps/note-filter.jsx';
 import { NoteList } from '../cmps/note-list.jsx';
 
 export class Notes extends React.Component {
   state = {
     notes: [],
-    filterBy: null,
   };
 
   componentDidMount() {
     this.loadNotes();
   }
 
-  loadNotes = () => {
-    const { filterBy } = this.state;
-    noteService.query(filterBy).then((notes) => {
+  loadNotes = (filterBy = null) => {
+    // const { filterBy } = this.state;
+    NoteService.query(filterBy).then((notes) => {
       this.setState({ notes });
     });
   };
+  
 
-  onSetFilter = (filterBy) => {
-    this.setState({ filterBy }, this.loadNotes);
-  };
   render() {
-      const { notes } = this.state;
+      const { notes ,ctg } = this.state;
       
     return (
       <section className="note-app" >
-        {/* <NoteFilter onSetFilter={this.onSetFilter} /> */}
+        <NoteFilter loadNotes={this.loadNotes} />
         <NoteList notes={notes} />
       </section>
     );

@@ -1,4 +1,4 @@
-export const noteUtilService ={
+export const NoteUtilService ={
     getMonthName,
     makeId,
 
