@@ -4,7 +4,7 @@ export class TextNote extends React.Component {
 
   render() {
     return (
-      <div className='notes' >
+      <div className='notes' style={this.props.note.style} >
         <h3>{this.props.note.info.txt}</h3>
       </div>
     );

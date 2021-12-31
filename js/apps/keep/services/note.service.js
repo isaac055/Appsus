@@ -14,6 +14,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -22,7 +23,7 @@ const gNotes = [
       url: 'https://i.natgeofe.com/n/abf58ec8-ac78-4108-adbe-918fa5bda2e5/mountain-gorilla_2x3.jpg',
       title: 'Bobi and Me',
     },
-    style: { backgroundColor: '#00d' },
+    style: { backgroundColor: getRandomColor() },
     importint: false,
   },
   {
@@ -36,6 +37,7 @@ const gNotes = [
       ],
     },
     importint: true,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -43,6 +45,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -50,6 +53,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -57,6 +61,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -64,6 +69,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -71,6 +77,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -78,6 +85,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -85,6 +93,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
   {
     id: NoteUtilService.makeId(),
@@ -92,6 +101,7 @@ const gNotes = [
     isPinned: true,
     info: { txt: 'Fullstack Me Baby!' },
     importint: false,
+    style: { backgroundColor: getRandomColor() },
   },
 ];
 
@@ -110,6 +120,15 @@ function _createNotes() {
     var notes = gNotes;
   }
   _saveNotesToStorage(notes);
+}
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 function _getFilteredNotes(notes, filterBy) {

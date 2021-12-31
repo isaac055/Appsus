@@ -4,7 +4,7 @@ export class TodoNote extends React.Component {
 
   render() {
     return (
-      <div className='notes'>
+      <div className='notes' style={this.props.note.style}>
         <h3>{this.props.note.info.label}</h3>
         {/* <ul> */}
           {this.props.note.info.todos.map((todo, idx) => {
