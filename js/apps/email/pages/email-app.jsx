@@ -26,11 +26,24 @@ export class MailApp extends React.Component {
     }
 
     loadEmails = () => {
-        const { filterBy } = this.state
+        // const { filterBy } = this.state
         emailService.query().then(emails => {
             this.setState({ emails })
         })
     }
+
+    onRemoveEmail = (id) => {
+    console.log(' delet');
+
+        emailService.removeEmail(id).then(() => {
+            console.log('id:', id);
+            // eventBusService.emit('user-msg', {
+            //     txt: 'mail is deleted !',
+            //     type: 'danger',
+            // });
+        });
+        this.loadEmails();
+    };
 
     onSetFilter = (filterBy) => {
         this.setState({ filterBy }, this.loadEmails)
@@ -46,7 +59,11 @@ export class MailApp extends React.Component {
                     <h1>side bar</h1>
                 </div>
                 <div className="mails">
-                    <EmailsList emails={emails} />
+                    <EmailsList
+                        emails={emails}
+                        onRemoveEmail={this.onRemoveEmail}
+                        // onAddMail={this.onAddEmail} 
+                        />
                 </div>
             </section>
         )

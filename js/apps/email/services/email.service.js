@@ -4,6 +4,8 @@ import { storageService } from './storage.service.js'
 
 export const emailService = {
     query,
+    removeEmail,
+    markedAsRead,
 
 }
 
@@ -39,7 +41,7 @@ function _createEmails() {
         emails = []
         for (var i = 0; i < 10; i++) {
             var email = {
-                id: 'e10'+i,
+                id: 'e10' + i,
                 subject: 'Miss you!',
                 body: 'Would love to catch up sometimes',
                 isRead: false,
@@ -53,6 +55,25 @@ function _createEmails() {
 
     }
     _saveEmailsToStorage(emails);
+}
+
+function removeEmail(emailId) {
+    let emails = _loadEmailsFromStorage()
+    emails = emails.filter(email => email.id !== emailId)
+    _saveEmailsToStorage(emails);
+    return Promise.resolve()
+}
+
+
+function markedAsRead(emailId) {
+    const emails = _loadEmailsFromStorage();
+
+    var email = emails.find((email) => {
+        return emailId.id === email.id;
+    });
+    email.isRead = true;
+    _saveEmailsToStorage(emails);
+    return Promise.resolve(email);
 }
 
 
