@@ -17,9 +17,9 @@ class _AppHeader extends React.Component {
                 <nav className="main-nav ">
                     <ul className="flex">
                         <li className='my-active'><NavLink activeClassName="my-active" exact to="/">Home</NavLink> </li>
-                        <li className='about'><NavLink to="/About">About</NavLink> </li>
                         <li className='Notes'><NavLink to="/Notes">Keep</NavLink></li>
                         <li className='Mail'><NavLink to="/Mail">Mail</NavLink> </li>
+                        <li className='about'><NavLink to="/About">About</NavLink> </li>
                     </ul>
                 </nav>
             </header>
