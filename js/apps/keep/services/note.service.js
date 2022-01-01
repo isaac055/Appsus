@@ -20,7 +20,7 @@ const gNotes = [
     id: NoteUtilService.makeId(),
     type: 'note-img',
     info: {
-      url: 'https://i.natgeofe.com/n/abf58ec8-ac78-4108-adbe-918fa5bda2e5/mountain-gorilla_2x3.jpg',
+      url: 'https://media.self.com/photos/5e8e2b54f77fc200080d4122/4:3/w_2560%2Cc_limit/pandas-eating-bamboo.jpg',
       title: 'Bobi and Me',
     },
     style: { backgroundColor: getRandomColor() },
@@ -41,70 +41,16 @@ const gNotes = [
   },
   {
     id: NoteUtilService.makeId(),
-    type: 'note-txt',
+    type: 'note-vid',
     isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
-    importint: false,
-    style: { backgroundColor: getRandomColor() },
-  },
-  {
-    id: NoteUtilService.makeId(),
-    type: 'note-txt',
-    isPinned: true,
-    info: { txt: 'Fullstack Me Baby!' },
+    info: {
+      title: 'Nice Song',
+      url: 'https://www.youtube.com/watch?v=2l6JUNFAJ9o',
+    },
     importint: false,
     style: { backgroundColor: getRandomColor() },
   },
 ];
-
 _createNotes();
 
 function query(filterBy = null) {
