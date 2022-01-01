@@ -9,7 +9,7 @@
 
 .side-bar {
     position: fixed;
-    background-color: rgb(138, 138, 141);
+    background-color: #52514f3b;
     width: calc(50vh);
     height: 100%;
 }
