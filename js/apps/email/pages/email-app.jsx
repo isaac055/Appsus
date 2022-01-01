@@ -1,12 +1,14 @@
 // import {Details} from  '../apps/keep/pages/note-details'
 import { emailService } from '../services/email.service.js'
 import { EmailsList } from '../cmps/email-list.jsx'
+import { AddEmail } from '../cmps/add-mail.jsx'
 console.log(EmailsList);
 
 export class MailApp extends React.Component {
     state = {
         emails: [],
         filterBy: null,
+        isModalOpen: false
     }
     componentDidMount() {
         const urlSearchParams = new URLSearchParams(this.props.location.search)
@@ -14,10 +16,6 @@ export class MailApp extends React.Component {
         this.loadEmails()
     }
 
-    // get ctgSearchParam() {
-    //     const urlSearchParams = new URLSearchParams(this.props.location.search)
-    //     return urlSearchParams.get('ctg')
-    // }
 
 
     get emailsToDisplay() {
@@ -32,8 +30,13 @@ export class MailApp extends React.Component {
         })
     }
 
+    onAddEmail = () => {
+        this.setState({ isModalOpen: !this.state.isModalOpen });
+        this.loadEmails();
+    }
+
     onRemoveEmail = (id) => {
-    console.log(' delet');
+        console.log(' delet');
 
         emailService.removeEmail(id).then(() => {
             console.log('id:', id);
@@ -50,20 +53,23 @@ export class MailApp extends React.Component {
     }
 
     render() {
-        const { emails } = this.state
+        const { emails, isModalOpen } = this.state
         // console.log(emails);
 
         return (
             <section className="email-app">
                 <div className="side-bar">
-                    <h1>side bar</h1>
+                    <button className='compose-btn' onClick={this.onAddEmail}>Compose</button>
+                    {isModalOpen && <AddEmail onAddMail={this.onAddEmail} />}
                 </div>
                 <div className="mails">
+
+                    {/* TOGGLE ISMODALOPEN INSTATE */}
                     <EmailsList
                         emails={emails}
                         onRemoveEmail={this.onRemoveEmail}
-                        // onAddMail={this.onAddEmail} 
-                        />
+                    />
+
                 </div>
             </section>
         )

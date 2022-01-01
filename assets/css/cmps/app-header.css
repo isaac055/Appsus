@@ -1,5 +1,11 @@
 .header {
     background-color: rgb(233, 155, 12);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 ul {
