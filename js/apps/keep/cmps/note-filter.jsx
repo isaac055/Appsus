@@ -30,10 +30,10 @@ export class NoteFilter extends React.Component {
       <section> 
         <input className='flex' placeholder='Search...' type='text' name='text' value={value} onChange={this.handleChange} />
         <section className='flex' >
-        <button id="note-txt" name='type' value='note-txt' onClick={this.handleChange} className='fillter-btn fas text'>note-txt</button>
-        <button id="note-img" name='type' value='note-img' onClick={this.handleChange} className='fillter-btn far image'>note-img</button>
-        <button id="note-vid" name='type' value='note-vid' onClick={this.handleChange} className='fillter-btn fab video'>note-vid</button>
-        <button id="note-todos" name='type' value='note-todos' onClick={this.handleChange} className='fillter-btn fas list'>note-todos</button>
+        <button id="note-txt" name='type' value='note-txt' onClick={this.handleChange} className='fillter-btn fas text'><img width="50px" src="./assets/css/apps/keep/keep-imgs/text-img.png"/></button>
+        <button id="note-img" name='type' value='note-img' onClick={this.handleChange} className='fillter-btn far image'><img width="50px" src="./assets/css/apps/keep/keep-imgs/image-img.png"/></button>
+        <button id="note-vid" name='type' value='note-vid' onClick={this.handleChange} className='fillter-btn fab video'><img width="50px" src="./assets/css/apps/keep/keep-imgs/video-img.png"/></button>
+        <button id="note-todos" name='type' value='note-todos' onClick={this.handleChange} className='fillter-btn fas list'><img width="50px" src="./assets/css/apps/keep/keep-imgs/todos-img.png"/></button>
         </section>
       </section>
     );
