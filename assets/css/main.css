@@ -3,7 +3,6 @@
 @import './cmps/app-home.css';
 @import './cmps/app-header.css';
 
-
 /* EMAIL PAGES */
 @import './apps/email/pages/email-app.css';
 
@@ -13,4 +12,5 @@
 
 /* keep css */
 @import './apps/keep/note-list.css';
-@import './apps/keep/note-preview.css'
+@import './apps/keep/note-preview.css';
+@import './apps/keep/note-app.css';

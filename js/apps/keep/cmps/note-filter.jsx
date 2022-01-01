@@ -29,10 +29,12 @@ export class NoteFilter extends React.Component {
     return (
       <section> 
         <input className='flex' placeholder='Search...' type='text' name='text' value={value} onChange={this.handleChange} />
+        <section className='flex' >
         <button id="note-txt" name='type' value='note-txt' onClick={this.handleChange} className='fillter-btn fas text'>note-txt</button>
         <button id="note-img" name='type' value='note-img' onClick={this.handleChange} className='fillter-btn far image'>note-img</button>
         <button id="note-vid" name='type' value='note-vid' onClick={this.handleChange} className='fillter-btn fab video'>note-vid</button>
         <button id="note-todos" name='type' value='note-todos' onClick={this.handleChange} className='fillter-btn fas list'>note-todos</button>
+        </section>
       </section>
     );
   }

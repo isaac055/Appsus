@@ -6,7 +6,3 @@
   grid-auto-flow: dense;
   border: 2px solid black;
 }
-.note-app{
-    display:flex;
-    justify-content: center;
-}
