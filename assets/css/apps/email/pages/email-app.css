@@ -11,4 +11,5 @@
     position: fixed;
     background-color: rgb(138, 138, 141);
     width: calc(50vh);
+    height: 100%;
 }
