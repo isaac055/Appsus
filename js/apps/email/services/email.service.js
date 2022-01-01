@@ -68,9 +68,13 @@ function removeEmail(emailId) {
 function markedAsRead(emailId) {
     const emails = _loadEmailsFromStorage();
 
-    var email = emails.find((email) => {
-        return emailId.id === email.id;
+    emails.forEach(email => {
+        if (emailId.id === email.id) email.isRead = true
+        return email;
     });
+    // var email = emails.find((email) => {
+    //     return emailId.id === email.id;
+    // });
     email.isRead = true;
     _saveEmailsToStorage(emails);
     return Promise.resolve(email);
