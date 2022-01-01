@@ -20,14 +20,25 @@ export class AddEmail extends React.Component {
 
     componentDidMount() {
         this.inputRef.current.focus()
-        // this.loadEmail()
+        this.loadEmail()
+    }
+
+    loadEmail = () => {
+        const { emailId } = this.props
+        if (!emailId) return
+        emailService.getEmailById(emailId).then(email => {
+            this.setState({ email: { to: email.from, subject: email.subject, body: email.body } })
+        })
     }
 
     onSaveEmail = (ev) => {
         ev.preventDefault();
         const { email } = this.state;
-        emailService.saveMail(email);
-        this.props.onAddEmail();
+        emailService._addEmail(email).then(email => {
+            this.loadEmail()
+            this.props.onAddEmail();
+        })
+
     };
 
     render() {
@@ -35,35 +46,35 @@ export class AddEmail extends React.Component {
         return (
             <div>
                 <section className='email-compose'>
-                    
-                        <form className='send-mail-form' onSubmit={this.onSaveEmail}>
-                            <button
-                                className='close-mail-form'
-                                onClick={() => this.props.onAddEmail()}>
-                                ×
-                            </button><br/>
-                            <label htmlFor="to-user">To:</label>
-                            <input
-                                ref={this.inputRef}
-                                name='to'
-                                type='text'
-                                id='to-user'
-                                value={to}
-                                onChange={this.handleChange}
-                            /><br/>
-                            <label htmlFor="subject">Subject:</label>
-                            <input
-                                name='subject'
-                                type='text'
-                                id='subject'
-                                value={subject}
-                                onChange={this.handleChange}
-                            /><br/>
-                             <label htmlFor="body">Body</label>
-                            <textarea name='body' value={body} onChange={this.handleChange} />
-                            <br/><button>Send mail</button>
-                        </form>
-                    
+
+                    <form className='send-mail-form' onSubmit={this.onSaveEmail}>
+                        <button
+                            className='close-mail-form'
+                            onClick={() => this.props.onAddEmail()}>
+                            ×
+                        </button><br />
+                        <label htmlFor="to-user">To:</label>
+                        <input
+                            ref={this.inputRef}
+                            name='to'
+                            type='text'
+                            id='to-user'
+                            value={to}
+                            onChange={this.handleChange}
+                        /><br />
+                        <label htmlFor="subject">Subject:</label>
+                        <input
+                            name='subject'
+                            type='text'
+                            id='subject'
+                            value={subject}
+                            onChange={this.handleChange}
+                        /><br />
+                        <label htmlFor="body">Body</label>
+                        <textarea name='body' value={body} onChange={this.handleChange} />
+                        <br /><button>Send mail</button>
+                    </form>
+
                 </section>
             </div>
         );
